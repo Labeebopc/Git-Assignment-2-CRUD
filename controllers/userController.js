@@ -7,7 +7,7 @@ const { UserSchema } = require("../models/userModel.js")
 
 const User = mongoose.model('User', UserSchema)
 
-const Register = async (req, res) => {
+const registerUser = async (req, res) => {
     const { name, email, password} = req.body;
 
     try {
@@ -32,7 +32,7 @@ const Register = async (req, res) => {
 
 }
 
-const Login = async (req, res) => {
+const loginUser = async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -69,4 +69,4 @@ const Login = async (req, res) => {
 }
 
 
-module.exports = {Register, Login}
+module.exports = {registerUser, loginUser}
