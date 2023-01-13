@@ -3,6 +3,7 @@ const bodyParser = require("body-parser")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const userRouter = require("./routes/userRouter.js")
+const postRouter= require("./routes/postRouter.js")
 
 
 const app = express()
@@ -15,7 +16,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 
 // User routes
-app.use("/api/v1/users",userRouter )
+app.use("/users",userRouter )
+
+// Post routes
+app.use("/posts",postRouter )
 
 
 
